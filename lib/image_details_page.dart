@@ -21,11 +21,27 @@ class _ImageDetailsPageState extends State<ImageDetailsPage> {
           transformationController: _controller,
           child: Stack(
             children: [
-              Hero(
-                tag: "image01",
-                child: Image.asset('images/image01.jpg'),
+              Align(
+                alignment: Alignment.center,
+                child: Hero(
+                  tag: "image01",
+                  child: Image.asset(
+                    'images/image01.jpg',
+                    fit: BoxFit.contain,
+                  ),
+                ),
               ),
               ...emojis,
+              Container(
+                color: Colors.red,
+                child: Text(
+                  "Click to smile! - Mouse wheel to zoom",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
